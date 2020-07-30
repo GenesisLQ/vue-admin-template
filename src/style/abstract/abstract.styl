@@ -1,0 +1,28 @@
+
+$flex
+  display flex
+
+$flex-direction-column
+  flex-direction column
+
+$flex-vertical-center
+  align-items center
+
+$flex-horizontal-center
+  justify-content center
+
+flex($h = normal, $v = normal, $d = '')
+  @extend $flex
+
+  if ($v == center)
+    @extend $flex-vertical-center
+  else
+    align-items $v
+
+  if ($h == center)
+    @extend $flex-horizontal-center
+  else
+    justify-content $h
+
+  if ($d == column)
+    @extend $flex-direction-column
